@@ -10,7 +10,8 @@
     "lint:fix": "next lint --fix",
     "markuplint": "markuplint \"./**/*.tsx\"",
     "prettier": "prettier --write .",
-    "secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'"
+    "secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "14.1.0",
@@ -35,6 +36,8 @@
     "eslint-plugin-tailwindcss": "^3.14.1",
     "eslint-plugin-typescript-sort-keys": "^3.1.0",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.1",
     "markuplint": "^4.0.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
