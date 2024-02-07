@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { Dispatch, SetStateAction } from 'react';
+import React from 'react';
 
 import { EMAIL_ADDRESS } from '@/app/utils/constants';
 import { PageType } from '@/app/utils/type';
@@ -8,10 +8,11 @@ import styles from './nav.module.scss';
 
 interface NavBackgroundProps {
   currentPage: PageType;
-  setCurrentPage: Dispatch<SetStateAction<PageType>>;
+  slideLeft: () => void;
+  slideRight: () => void;
 }
 
-const NavBackground: React.FC<NavBackgroundProps> = ({ currentPage, setCurrentPage }) => {
+const NavBackground: React.FC<NavBackgroundProps> = ({ currentPage, slideLeft, slideRight }) => {
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
@@ -21,19 +22,13 @@ const NavBackground: React.FC<NavBackgroundProps> = ({ currentPage, setCurrentPa
     >
       <div className={styles.navLeft}>
         <div className={styles.navAboutWrapper}>
-          <h3
-            className={styles.navAbout}
-            onClick={() => setCurrentPage((page) => (page === 'about' ? 'home' : 'about'))}
-          >
+          <h3 className={styles.navAbout} onClick={slideLeft}>
             {currentPage === 'about' ? 'Close' : 'About'}
           </h3>
         </div>
       </div>
       <div className={styles.navRight}>
-        <h3
-          className={styles.navAbout}
-          onClick={() => setCurrentPage((page) => (page === 'articles' ? 'home' : 'articles'))}
-        >
+        <h3 className={styles.navAbout} onClick={slideRight}>
           {currentPage === 'articles' ? 'Close' : 'Articles'}
         </h3>
       </div>
