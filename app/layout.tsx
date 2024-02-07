@@ -19,7 +19,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className="fixed inset-x-0 top-0 flex h-10 items-center justify-center bg-black text-white">
+          Header
+        </header>
+        {children}
+        <footer className="fixed inset-x-0 bottom-0 flex h-10 items-center justify-center bg-black text-white">
+          Footer
+        </footer>
+      </body>
     </html>
   );
 }
