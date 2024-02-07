@@ -1,0 +1,57 @@
+.nav {
+  user-select: none;
+  position: absolute;
+  inset: 0;
+}
+
+.navPosition {
+  position: absolute;
+}
+
+.navLeft,
+.navRight {
+  @extend .navPosition;
+  transform: rotateZ(-90deg);
+  top: 50%;
+}
+
+.navLeft {
+  left: 40px;
+  transform: rotateZ(-90deg) translateX(-50%);
+  transform-origin: 0 50%;
+}
+
+.navRight {
+  right: 40px;
+  transform: rotateZ(-90deg) translateX(50%);
+  z-index: 1000001;
+  transform-origin: 100% 50%;
+}
+
+.navAboutWrapper {
+  padding: 10px;
+  display: inline-block;
+}
+
+.navAbout {
+  font-family: Arial;
+  color: #fff;
+  opacity: 0.5;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  letter-spacing: 1.5px;
+  font-size: 11px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.navBottom {
+  @extend .navPosition;
+  bottom: 40px;
+  z-index: 1000001;
+  transform: translateX(-50%);
+  left: 50%;
+}

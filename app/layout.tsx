@@ -1,8 +1,6 @@
 import { Inter } from 'next/font/google';
 import React from 'react';
 
-import Header from './components/header/Index';
-
 import type { Metadata } from 'next';
 
 import './globals.css';
@@ -21,13 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <footer className="fixed inset-x-0 bottom-0 flex h-10 items-center justify-center bg-black text-white">
-          Footer
-        </footer>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

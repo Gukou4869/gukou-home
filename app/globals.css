@@ -17,13 +17,16 @@
 }
 
 body {
-  color: #000;
-  font-family: Inter, GenJyuuGothicL, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', Meiryo, sans-serif;
-  background: #ffffff;
+  color: white;
+  background: #000;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.name {
+  font-size: 55px;
 }
