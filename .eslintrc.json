@@ -2,12 +2,11 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
-
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
-
   "parser": "@typescript-eslint/parser",
   "plugins": ["unused-imports", "perfectionist"],
   "parserOptions": {
@@ -42,7 +41,6 @@
         }
       }
     ],
-
     "perfectionist/sort-interfaces": "error"
   }
 }
