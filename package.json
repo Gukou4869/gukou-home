@@ -16,6 +16,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "lucide-react": "^0.323.0",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"
@@ -52,6 +53,7 @@
     "markuplint": "^4.0.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
+    "sass": "^1.70.0",
     "secretlint": "^8.1.1",
     "storybook": "^7.6.13",
     "tailwindcss": "^3.3.0",
