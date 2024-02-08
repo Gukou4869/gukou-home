@@ -1,7 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { AnimatePresence } from 'framer-motion';
 
 interface AnimationWrapperProps {
   children: React.ReactNode;
@@ -9,15 +8,8 @@ interface AnimationWrapperProps {
 
 const AnimateTransition = (props: AnimationWrapperProps) => {
   const { children } = props;
-  const key = usePathname();
 
-  return (
-    <AnimatePresence mode="wait">
-      <motion.div animate={{ opacity: 1 }} id={key} initial={{ opacity: 0 }} key={key} transition={{ duration: 0.5 }}>
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
+  return <AnimatePresence mode="wait">{children}</AnimatePresence>;
 };
 
 export default AnimateTransition;

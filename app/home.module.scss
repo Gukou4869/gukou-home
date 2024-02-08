@@ -33,29 +33,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.slider {
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-
-  .slides {
-    display: flex;
-    transition: all 0.5s ease-in-out;
-    width: 300%; // スライドの数に応じて調整
-  }
-
-  .slide {
-    width: 100%;
-    flex: 0 0 33.3333%; // 3つのスライドなので、各スライドはコンテナの1/3の幅
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; // 適宜調整
-  }
 }

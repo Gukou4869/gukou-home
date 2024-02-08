@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google';
 import React from 'react';
 
+import AnimateTransition from './AnimateTransition';
+import NavBackground from './components/navBackground';
+
 import type { Metadata } from 'next';
 
 import './globals.css';
@@ -19,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NavBackground currentPage="home">
+          <AnimateTransition>{children}</AnimateTransition>
+        </NavBackground>
+      </body>
     </html>
   );
 }
