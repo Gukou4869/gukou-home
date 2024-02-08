@@ -1,70 +1,80 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
 
+import NavBackground from '../components/navBackground';
+import { setPageState } from '../store/slice/pageSlice';
+import { useAppDispatch, useAppSelector } from '../store/store';
 import { FULL_NAME } from '../utils/constants';
-import { PageType } from '../utils/type';
 
 import styles from './home.module.scss';
 
 export default function Home() {
-  const [currentContent, setCurrentContent] = useState<PageType>('home');
+  const pageState = useAppSelector((state) => state.page.pageState);
+  const dispatch = useAppDispatch();
+
+  const onSelectAbout = () => {
+    dispatch(setPageState(pageState === 'home' ? 'about' : 'home'));
+  };
+
+  const onSelectArticles = () => {
+    dispatch(setPageState(pageState === 'home' ? 'articles' : 'home'));
+  };
+
   return (
-    <motion.main className={styles.mainWrap} exit={{ background: 'red' }} key="home" transition={{ duration: 1 }}>
-      <AnimatePresence mode="wait">
-        {currentContent === 'home' && (
-          <div className={styles.content}>
-            <motion.h1
-              animate={{ y: 0, opacity: 1 }}
-              className={styles.name}
-              exit={{
-                y: -30,
-                opacity: 0,
-                transition: {
-                  duration: 0.5,
-                  delay: 0,
-                },
-              }}
-              initial={{
-                y: -15,
-                opacity: 0,
-              }}
-              key="name"
-              transition={{ duration: 3, delay: 0.5 }}
-            >
-              {FULL_NAME}
-            </motion.h1>
-            <motion.span
-              animate={{ y: 0, opacity: 1 }}
-              className={styles.role}
-              exit={{
-                y: -30,
-                opacity: 0,
-                transition: {
-                  duration: 0.5,
-                  delay: 0,
-                },
-              }}
-              initial={{
-                y: -15,
-                opacity: 0,
-              }}
-              key="role"
-              transition={{ duration: 3, delay: 1 }}
-            >
-              Frontend Developer
-            </motion.span>
-          </div>
-        )}
-      </AnimatePresence>
-      <button
-        onClick={() => {
-          setCurrentContent('about');
-        }}
-      >
-        test
-      </button>
-    </motion.main>
+    <NavBackground currentPage={pageState} onSelectAbout={onSelectAbout} onSelectArticles={onSelectArticles}>
+      <main className={styles.mainWrap}>
+        <AnimatePresence mode="wait">
+          {pageState === 'home' && (
+            <div className={styles.content}>
+              <div style={{ overflow: 'hidden' }}>
+                <motion.h1
+                  animate={{ transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 1 }}
+                  className={styles.name}
+                  exit={{
+                    opacity: 0,
+                    transform: 'matrix(1, 0, 0, 1, 0, -60)',
+                    transition: {
+                      duration: 1,
+                      delay: 0.5,
+                    },
+                  }}
+                  initial={{
+                    y: -15,
+                    opacity: 0,
+                  }}
+                  key="name"
+                  transition={{ duration: 2, delay: 0.75 }}
+                >
+                  {FULL_NAME}
+                </motion.h1>
+              </div>
+              <div style={{ overflow: 'hidden', height: 'auto' }}>
+                <motion.div
+                  animate={{ transform: 'matrix(1, 0, 0, 1, 0, 0)', opacity: 1 }}
+                  className={styles.role}
+                  exit={{
+                    opacity: 0,
+                    transform: 'matrix(1, 0, 0, 1, 0, -60)',
+                    transition: {
+                      duration: 2,
+                      delay: 0.25,
+                    },
+                  }}
+                  initial={{
+                    y: -15,
+                    opacity: 0,
+                  }}
+                  key="role"
+                  transition={{ duration: 2, delay: 1 }}
+                >
+                  Frontend Developer
+                </motion.div>
+              </div>
+            </div>
+          )}
+        </AnimatePresence>
+      </main>
+    </NavBackground>
   );
 }

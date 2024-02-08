@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import React from 'react';
 
 import { EMAIL_ADDRESS } from '@/src/utils/constants';
@@ -12,10 +11,12 @@ import styles from './nav.module.scss';
 interface NavBackgroundProps {
   children: React.ReactNode;
   currentPage: PageType;
+  onSelectAbout: () => void;
+  onSelectArticles: () => void;
   // setCurrentContent: Dispatch<SetStateAction<PageType>>;
 }
 
-const NavBackground: React.FC<NavBackgroundProps> = ({ currentPage, children }) => {
+const NavBackground: React.FC<NavBackgroundProps> = ({ children, currentPage, onSelectAbout, onSelectArticles }) => {
   return (
     <motion.div
       animate={{ opacity: 1, y: 0 }}
@@ -25,14 +26,13 @@ const NavBackground: React.FC<NavBackgroundProps> = ({ currentPage, children }) 
     >
       <div className={styles.navLeft}>
         <div className={styles.navAboutWrapper}>
-          <h3 className={styles.navAbout} onClick={() => {}}>
+          <h3 className={styles.navAbout} onClick={onSelectAbout}>
             {currentPage === 'about' ? 'Close' : 'About'}
-            <Link href="/about">test</Link>
           </h3>
         </div>
       </div>
       <div className={styles.navRight}>
-        <h3 className={styles.navAbout} onClick={() => {}}>
+        <h3 className={styles.navAbout} onClick={onSelectArticles}>
           {currentPage === 'articles' ? 'Close' : 'Articles'}
         </h3>
       </div>
