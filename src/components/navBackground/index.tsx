@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 
-import { EMAIL_ADDRESS } from '@/app/utils/constants';
-import { PageType } from '@/app/utils/type';
+import { EMAIL_ADDRESS } from '@/src/utils/constants';
+import { PageType } from '@/src/utils/type';
 
 import styles from './nav.module.scss';
 

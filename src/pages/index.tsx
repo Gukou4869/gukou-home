@@ -3,9 +3,10 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
+import { FULL_NAME } from '../utils/constants';
+import { PageType } from '../utils/type';
+
 import styles from './home.module.scss';
-import { FULL_NAME } from './utils/constants';
-import { PageType } from './utils/type';
 
 export default function Home() {
   const [currentContent, setCurrentContent] = useState<PageType>('home');
