@@ -35,12 +35,13 @@ export default function Home() {
                     opacity: 0,
                     transform: 'matrix(1, 0, 0, 1, 0, -60)',
                     transition: {
-                      duration: 1,
-                      delay: 0.5,
+                      ease: 'easeIn',
+                      duration: 0.5,
+                      delay: 0.6,
                     },
                   }}
                   initial={{
-                    y: -15,
+                    transform: 'matrix(1, 0, 0, 1, 0, -60)',
                     opacity: 0,
                   }}
                   key="name"
@@ -57,16 +58,17 @@ export default function Home() {
                     opacity: 0,
                     transform: 'matrix(1, 0, 0, 1, 0, -60)',
                     transition: {
-                      duration: 2,
-                      delay: 0.25,
+                      ease: 'easeIn',
+                      duration: 0.5,
+                      delay: 0.5,
                     },
                   }}
                   initial={{
-                    y: -15,
+                    transform: 'matrix(1, 0, 0, 1, 0, -60)',
                     opacity: 0,
                   }}
                   key="role"
-                  transition={{ duration: 2, delay: 1 }}
+                  transition={{ duration: 2, delay: 1.25 }}
                 >
                   Frontend Developer
                 </motion.div>
