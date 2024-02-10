@@ -8,13 +8,7 @@ import styles from './home.module.scss';
 
 export default function Home() {
   return (
-    <motion.div
-      animate={{ x: 0 }}
-      className={styles.mainWrap}
-      // exit={{ opacity: 0, x: pageState === 'about' ? '-100%' : '100%' }}
-      initial={{ x: 0 }}
-      transition={{ duration: 2.75, ease: 'easeInOut' }}
-    >
+    <div className={styles.mainWrap}>
       <div className={styles.content}>
         <div style={{ overflow: 'hidden' }}>
           <motion.h1
@@ -61,6 +55,6 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

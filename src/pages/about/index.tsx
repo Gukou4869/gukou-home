@@ -1,8 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FC } from 'react';
 
+import ReactImage from '@/public/react.webp';
+import TypeScriptImage from '@/public/typescript.png';
 import { EMAIL_ADDRESS, FULL_NAME } from '@/src/utils/constants';
 
 import styles from './about.module.scss';
@@ -61,6 +64,10 @@ const AboutPage: FC = () => {
           Born and raised in Kobe, I graduated from Kobe City University of Foreign Studies. I have more than two and a
           half years of experience in frontend development, primarily using React and TypeScript.
         </h1>
+      </section>
+      <section style={{ display: 'flex', gap: 30 }}>
+        <Image alt="typescript-logo" height={100} src={TypeScriptImage} width={100} />
+        <Image alt="typescript-logo" height={100} src={ReactImage} width={100} />
       </section>
       <section className={styles.linksSection}>
         <ul className={styles.links}>
