@@ -5,7 +5,7 @@ import QiitaImage from '@/public/qiita.webp';
 import ZennImage from '@/public/zenn.png';
 import { cx } from '@/src/utils/helper';
 
-import styles from './Card.module.scss'; // CSSモジュールのインポート
+import styles from './card.module.scss'; // CSSモジュールのインポート
 
 export interface ICardProps {
   category: string[];
