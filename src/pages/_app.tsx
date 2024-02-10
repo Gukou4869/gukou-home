@@ -1,4 +1,3 @@
-import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 
 import Navigation from '../components/navigation';
@@ -19,9 +18,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
       <ReduxProvider>
         <Navigation />
         <div className={styles.mainWrap}>
-          <AnimatePresence mode={'wait'}>
-            <Component {...pageProps} key={router.pathname} />
-          </AnimatePresence>
+          <Component {...pageProps} key={router.pathname} />
         </div>
       </ReduxProvider>
     </div>
