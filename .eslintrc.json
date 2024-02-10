@@ -12,6 +12,14 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "overrides": [
+    {
+      "files": ["next.config.js"],
+      "parserOptions": {
+        "project": null
+      }
+    }
+  ],
   "rules": {
     "unused-imports/no-unused-imports": "error",
     "react/jsx-sort-props": [

@@ -1,5 +1,3 @@
-'use client';
-
 import NameSection from '../components/name/name';
 import { FULL_NAME, ROLE } from '../utils/constants';
 
