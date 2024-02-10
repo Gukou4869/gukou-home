@@ -3,9 +3,18 @@
   justify-content: center;
   display: flex;
   align-items: center;
-  min-height: 100vh;
 }
 
-.title {
-  font-size: 55px;
+.grid {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // 250px の最小幅で列をフレキシブルに調整
+  gap: 20px; // カード間のギャップ
+  padding: 20px; // リスト全体のパディング
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); // モバイルビューでの列の幅を調整
+  }
 }
