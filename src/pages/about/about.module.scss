@@ -4,32 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 100px);
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: 100px;
-}
-
-.name {
-  font-size: 55px;
-  font-weight: 500;
-  font-family: 'Bodoni 72', sans-serif;
-  margin-top: -12px;
-  line-height: 68px;
-}
-
-.role {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  text-align: center;
-}
-
-.nameSection {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .descriptionSection {

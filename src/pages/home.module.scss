@@ -1,40 +1,12 @@
 .mainWrap {
-  min-height: 100vh;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-}
-
-.name {
-  font-size: 55px;
-  font-weight: 500;
-  font-family: 'Bodoni 72', sans-serif;
-  margin-top: -12px;
-  line-height: 68px;
-}
-
-.role {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-}
-.contentWrap {
-  min-height: 100vh;
+  margin-top: 150px;
+  height: calc(100vh - 150px);
   width: 100%;
   display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
 }
 
 .content {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
