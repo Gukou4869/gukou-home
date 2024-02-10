@@ -11,7 +11,7 @@ export default function Home() {
     <motion.div
       animate={{ x: 0 }}
       className={styles.mainWrap}
-      exit={{ opacity: 0, x: '-100%' }}
+      // exit={{ opacity: 0, x: pageState === 'about' ? '-100%' : '100%' }}
       initial={{ x: 0 }}
       transition={{ duration: 2.75, ease: 'easeInOut' }}
     >

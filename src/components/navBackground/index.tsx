@@ -10,13 +10,7 @@ import { EMAIL_ADDRESS } from '@/src/utils/constants';
 
 import styles from './nav.module.scss';
 
-interface NavBackgroundProps {
-  // children: React.ReactNode;
-  // currentPage: PageType;
-  // onSelectAbout: () => void;
-  // onSelectArticles: () => void;
-  // setCurrentContent: Dispatch<SetStateAction<PageType>>;
-}
+interface NavBackgroundProps {}
 
 const NavBackground: React.FC<NavBackgroundProps> = () => {
   const pageState = useAppSelector((state) => state.page.pageState);
@@ -24,13 +18,13 @@ const NavBackground: React.FC<NavBackgroundProps> = () => {
   const router = useRouter();
 
   const onSelectAbout = () => {
-    router.push('/about');
     dispatch(setPageState(pageState === 'home' ? 'about' : 'home'));
+    router.push(pageState === 'home' ? '/about' : '/');
   };
 
   const onSelectArticles = () => {
-    router.push('/home');
     dispatch(setPageState(pageState === 'home' ? 'articles' : 'home'));
+    router.push(pageState === 'home' ? '/articles' : '/');
   };
 
   return (
