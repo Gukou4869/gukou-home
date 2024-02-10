@@ -34,7 +34,6 @@ const NameSection = ({ fullName, role }: INameProps) => {
         <motion.h1
           animate="animate"
           className={styles.name}
-          exit="exit"
           initial="initial"
           transition={{ delay: 0.75 }}
           variants={animationVariants}
@@ -45,7 +44,6 @@ const NameSection = ({ fullName, role }: INameProps) => {
           <motion.div
             animate="animate"
             className={styles.role}
-            exit="exit"
             initial="initial"
             transition={{ delay: 1.25, duration: 2 }}
             variants={animationVariants}
