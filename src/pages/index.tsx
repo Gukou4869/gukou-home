@@ -33,7 +33,6 @@ export default function Home() {
               transform: 'matrix(1, 0, 0, 1, 0, -60)',
               opacity: 0,
             }}
-            key="name"
             transition={{ duration: 2, delay: 0.75 }}
           >
             {FULL_NAME}
@@ -56,7 +55,6 @@ export default function Home() {
               transform: 'matrix(1, 0, 0, 1, 0, -60)',
               opacity: 0,
             }}
-            key="role"
             transition={{ duration: 2, delay: 1.25 }}
           >
             Frontend Developer
