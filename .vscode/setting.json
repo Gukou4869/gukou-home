@@ -4,5 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "markuplint.enable": true
-  }
+  },
+  "stylelint.stylelintPath": "node_modules/stylelint",
+  "stylelint.validate": ["scss"]
 }
