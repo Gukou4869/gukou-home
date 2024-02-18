@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, TypedUseSelectorHook, useSelector } from 'react-redux';
 
+import { mediaQueryReducer } from './slice/mediaQuerySlice';
 import { pageReducer } from './slice/pageSlice';
 
 export const store = configureStore({
-  reducer: { page: pageReducer },
+  reducer: { page: pageReducer, mq: mediaQueryReducer },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 });
 
