@@ -1,8 +1,10 @@
+@use './utils' as *;
+
 $white: #fff;
 $black: #000;
 $font-bondi: 'Bodoni 72', sans-serif;
 $font-arial: 'Arial';
 
 // layout
-$headerHeight: 75px;
-$mainWrapperHeight: calc(100vh - $headerHeight);
+$headerHeight: responsive-clamp(75px, 150px);
+$mainWrapperHeight: calc(100vh - ($headerHeight * 2));
