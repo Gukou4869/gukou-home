@@ -1,7 +1,12 @@
 @use './utils' as *;
 
+// color
 $white: #fff;
 $black: #000;
+$backgroundColor: $white;
+$fontColor: $black;
+
+// font-family
 $font-bondi: 'Bodoni 72', sans-serif;
 $font-arial: 'Arial';
 

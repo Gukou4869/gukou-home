@@ -4,12 +4,18 @@
 
 .navigation {
   position: fixed;
-  top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
   z-index: 100000;
   height: $headerHeight;
-  background-color: $black;
+  background-color: transparent;
+}
+
+@include min-media(lg) {
+  .navigation {
+    top: 0;
+  }
 }
 
 .navs {
@@ -18,9 +24,15 @@
   display: flex;
   gap: responsive-clamp(5px, 10px);
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   height: 100%;
   padding: 0 responsive-clamp(10px, 50px);
+}
+
+@include min-media(lg) {
+  .navs {
+    justify-content: flex-end;
+  }
 }
 
 .navItem {
@@ -39,7 +51,7 @@
     left: 0;
     height: 3px;
     content: '';
-    background: $white;
+    background: $black;
     transition: transform 0.3s ease;
     transform: scaleX(0);
     transform-origin: left;
