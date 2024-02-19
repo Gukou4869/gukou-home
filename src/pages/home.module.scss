@@ -1,13 +1,6 @@
 @use '../styles/global' as *;
 @use '../styles/mediaQuery' as *;
 
-.mainWrap {
-  display: flex;
-  width: 100%;
-  height: $mainWrapperHeight;
-  margin-top: $headerHeight;
-}
-
 .content {
   position: absolute;
   inset: 0;

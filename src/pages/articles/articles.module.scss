@@ -1,10 +1,13 @@
 @use '../../styles/utils' as *;
+@use '../../styles/global' as *;
 
 .articles {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: $mainWrapperHeight;
+  padding-top: $headerHeight;
 }
 
 .grid {
@@ -25,5 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: $font-bondi;
   font-size: responsive-clamp(25px, 40px);
 }

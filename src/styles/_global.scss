@@ -12,4 +12,4 @@ $font-arial: 'Arial';
 
 // layout
 $headerHeight: responsive-clamp(75px, 150px);
-$mainWrapperHeight: calc(100vh - ($headerHeight * 2));
+$mainWrapperHeight: calc(100vh - $headerHeight);

@@ -1,4 +1,6 @@
 @use '../../styles/utils' as *;
+@use '../../styles/global' as *;
+@use '../../styles/mediaQuery' as *;
 
 .about {
   display: flex;
@@ -7,6 +9,8 @@
   justify-content: center;
   width: 100%;
   max-width: 1280px;
+  min-height: $mainWrapperHeight;
+  padding-top: $headerHeight;
   margin: 0 auto;
 }
 
