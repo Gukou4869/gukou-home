@@ -18,3 +18,10 @@
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
+
+.noArticles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}

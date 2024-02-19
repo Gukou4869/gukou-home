@@ -3,8 +3,7 @@
 .mainWrap {
   display: flex;
   width: 100%;
-  height: $mainWrapperHeight;
-  margin-top: $headerHeight;
+  height: 100vh;
 }
 
 .content {
@@ -13,5 +12,4 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: -150px;
 }

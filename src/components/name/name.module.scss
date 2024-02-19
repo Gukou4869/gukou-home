@@ -1,21 +1,23 @@
+@use '../../styles/utils' as *;
+
 .nameSection {
-  flex: 1;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
 }
 
 .name {
-  font-size: 55px;
-  font-weight: 500;
-  font-family: 'Bodoni 72', sans-serif;
   margin-top: -12px;
+  font-family: 'Bodoni 72', sans-serif;
+  font-size: responsive-clamp(50px, 60px);
+  font-weight: 500;
   line-height: 68px;
 }
 
 .role {
+  font-size: responsive-clamp(10px, 12px);
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 12px;
-  text-align: center;
 }

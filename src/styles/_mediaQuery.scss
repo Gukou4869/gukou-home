@@ -1,0 +1,53 @@
+@use 'sass:map';
+
+// ブレイクポイントの定義
+$breakpoints: (
+  'xs': 320px,
+  'sm': 480px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+// 特定のブレイクポイント以上でスタイルを適用するMixin
+@mixin media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "ブレイクポイントが設定されていません: #{$breakpoint}";
+  }
+}
+
+// 特定のサイズ範囲内でスタイルを適用するMixin
+@mixin range-media($min, $max) {
+  $min-width: if(map.has-key($breakpoints, $min), map.get($breakpoints, $min), $min);
+  $max-width: if(map.has-key($breakpoints, $max), map.get($breakpoints, $max), $max);
+
+  @media (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// 特定のサイズ以上でスタイルを適用するMixin
+@mixin min-media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "ブレイクポイントが設定されていません: #{$breakpoint}";
+  }
+}
+
+// 特定のサイズ以下でスタイルを適用するMixin
+@mixin max-media($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+      @content;
+    }
+  } @else {
+    @warn "ブレイクポイントが設定されていません: #{$breakpoint}";
+  }
+}

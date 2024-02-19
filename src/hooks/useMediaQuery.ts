@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { MediaQuerySize, setMediaQuerySize } from '../store/slice/mediaQuerySlice';
@@ -16,7 +16,7 @@ const getMediaQuerySize = (width: number): MediaQuerySize => {
 export const useMediaQuery = () => {
   const dispatch = useDispatch();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       // ウィンドウの幅を取得
       const width = window.innerWidth;

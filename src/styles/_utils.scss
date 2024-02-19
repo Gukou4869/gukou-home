@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+@function vw-to-px($value, $base-font-size: 16px) {
+  // デフォルトのフォントサイズ（16px）を基準にvwからpxに変換
+  @return ($value * $base-font-size) / 100;
+}
+
+@function responsive-clamp($minSize, $maxSize, $minWidth: 320px, $maxWidth: 1440px) {
+  // 渡された値がすでにpxであればそのまま使用、そうでなければvwに変換
+  $minWidthPx: if(math.unit($minWidth) == 'px', $minWidth, vw-to-px($minWidth));
+  $maxWidthPx: if(math.unit($maxWidth) == 'px', $maxWidth, vw-to-px($maxWidth));
+
+  // 中間値の計算に使用する係数を計算
+  $slope: ($maxSize - $minSize) / ($maxWidthPx - $minWidthPx);
+  $base: $minSize - $slope * $minWidthPx;
+
+  // CSSのclamp()関数の形式で値を返す
+  @return clamp(#{$minSize}, #{$base} + #{$slope} * 100vw, #{$maxSize});
+}
