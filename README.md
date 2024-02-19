@@ -1,5 +1,30 @@
-### Gukou Template
+# Gukou Home
 
-## this repository is for boiler-plate for my upcoming project!
+## 概要
 
-### Reference: (https://zenn.dev/yoshinoki/articles/next-ts-tailwind-setting)
+個人HP作成のためのリポジトリ。
+日頃気になった技術をここで試したりもします。
+
+## 機能
+
+- **ブログ**: これまでに私が書いた技術記事のまとめが見ることができる（Coming Soon!!🔥）
+
+## 技術スタック
+
+- HTML/CSS
+- JavaScript
+- React
+- Node.js
+- Redux
+- Framer-motion
+- Sass
+- Tailwind
+
+## ライセンス
+
+このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
+
+## 作者
+
+- 名前: Shota Taniguchi
+- 連絡先: st11121.grtkmch@gmail.com
