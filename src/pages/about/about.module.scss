@@ -36,3 +36,13 @@
     opacity: 1;
   }
 }
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.image[data-current-mq='sm'] {
+  width: 50;
+  height: 50px;
+}

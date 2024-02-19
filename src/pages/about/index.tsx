@@ -5,11 +5,13 @@ import { FC } from 'react';
 import ReactImage from '@/public/react.webp';
 import TypeScriptImage from '@/public/typescript.png';
 import NameSection from '@/src/components/name/name';
+import { useAppSelector } from '@/src/store/store';
 import { BIO_TEXT, FULL_NAME, ROLE, linkItems } from '@/src/utils/constants';
 
 import styles from './about.module.scss';
 
 const AboutPage: FC = () => {
+  const mq = useAppSelector((state) => state.mq.size);
   return (
     <motion.div animate={{ opacity: 1 }} className={styles.about} initial={{ opacity: 0 }}>
       <NameSection fullName={FULL_NAME} role={ROLE} />
@@ -17,8 +19,8 @@ const AboutPage: FC = () => {
         <h1>{BIO_TEXT}</h1>
       </section>
       <section style={{ display: 'flex', gap: 30 }}>
-        <Image alt="TypeScript logo" height={100} src={TypeScriptImage} width={100} />
-        <Image alt="React logo" height={100} src={ReactImage} width={100} />
+        <Image alt="TypeScript logo" className={styles.image} data-current-mq={mq} src={TypeScriptImage} />
+        <Image alt="React logo" className={styles.image} data-current-mq={mq} src={ReactImage} />
       </section>
       <section className={styles.linksSection}>
         <ul className={styles.links}>
