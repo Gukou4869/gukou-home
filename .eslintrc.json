@@ -14,7 +14,7 @@
   },
   "overrides": [
     {
-      "files": ["next.config.js"],
+      "files": ["next.config.js", "jest.config.js"],
       "parserOptions": {
         "project": null
       }
